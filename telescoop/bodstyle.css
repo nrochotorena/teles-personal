@@ -1,0 +1,38 @@
+.h3-bod-table {
+    text-align: center;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+.button-bod {
+display: flex;
+justify-content: space-between;
+margin-left: 5%;
+margin-right: 5%;
+}
+
+.bodygradient {
+background-image: linear-gradient(#5f6e51, #FFFFFF);
+width: 100%;
+min-height: 100vh;
+}
+
+/* Striped border - Change background color to liking (: */
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+background-color: #5f6e51; 
+ }
+
+
+.table>tbody>tr>td,
+.table>tbody>tr>th {
+border: none;
+}
+
+.table>thead>tr>td,
+.table>thead>tr>th{
+border-top: none;
+border-bottom: 2px solid black;
+}

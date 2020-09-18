@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="bodstyle.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+    <div class="bodygradient">
+    <h2 class="h2-bod m-1">BOARD OF DIRECTOR APPROVAL PAGE</h2>
+    <body>
+       <div class="containter-bod m-4">
+           
+           <h3 class="h3-bod-table">LIST OF LOANS REQUIRED FOR APPROVAL</h1>
+                <table class="table table-striped" style="width: 100%"
+                id="table"
+                data-search="true">
+                
+                    <thead>
+                        <tr>
+                            <th class="active">
+                                <input type="checkbox" class="select-all checkbox mb-1" name="select-all" />
+                            </th>
+                            <th>PO Number</th>
+                            <th>Loan Date</th>
+                            <th>Amount</th>
+                            <th>Loan Type</th>
+                            <th>Company</th>
+                            <th>Number of BOD Approved</th>
+                            <th>BOD Approval Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="active">
+                                <input type="checkbox" class="select-item checkbox mt-1" name="select-item" value="1" />
+                            </td>
+                            <th><u><a href="">asd</a></u></th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                        </tr>
+                        <tr>
+                            <td class="active">
+                                <input type="checkbox" class="select-item checkbox mt-1" name="select-item" value="2" />
+                            </td>
+                            <th><u><a href="">asd</a></u></th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                        </tr>
+                        <tr>
+                            <td class="active">
+                                <input type="checkbox" class="select-item checkbox mt-1" name="select-item" value="3" />
+                            </td>
+                            <th><u><a href="">asd</a></u></th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                            <th>asd</th>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+                <h6>*Note: For multiple transaction, click the checkbox per item.
+                    To view application details, click the PO# and to undo a Disapproved
+                    Application <u><a href="">Click Here</a></u>
+                </h6>
+       </div>
+       <div class="button-bod">
+           <button type="button" class="disapproveBtn">DISAPPROVE</button>
+           <button type="button" class="approveBtn">APPROVE</button>
+       </div>
+    </div>
+    </body>
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            //button select all or cancel
+            $("#select-all").click(function () {
+                var all = $("input.select-all")[0];
+                all.checked = !all.checked
+                var checked = all.checked;
+                $("input.select-item").each(function (index,item) {
+                    item.checked = checked;
+                });
+            });
+            //column checkbox select all or cancel
+            $("input.select-all").click(function () {
+                var checked = this.checked;
+                $("input.select-item").each(function (index,item) {
+                    item.checked = checked;
+                });
+            });
+            //check selected items
+            $("input.select-item").click(function () {
+                var checked = this.checked;
+                var all = $("input.select-all")[0];
+                var total = $("input.select-item").length;
+                var len = $("input.select-item:checked:checked").length;
+                all.checked = len===total;
+            });
+            
+        });       
+    </script>
+</html>
